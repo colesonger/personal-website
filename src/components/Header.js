@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {Spring} from 'react-spring/renderprops';
 
 class Header extends Component {
     
@@ -10,13 +10,18 @@ class Header extends Component {
             {title: 'portfolio', id: 3},
             {title: 'contact', id: 4}
         ],
-        show: false
+        show: false,
+        firstName: 'cole',
+        lastName: 'songer',
+        displayFirst: '',
+        displaySecond: ''
     };
 
     switch = () => {
         this.setState(prevState =>({
             show: !prevState.show
         }));
+        
     }
 
 
@@ -35,10 +40,22 @@ class Header extends Component {
                     <div className="left-div" style={{fontWeight: 300, fontSize: '5.5em'}}>
                         <div className="first">
                             <div style={{marginBottom: -25}}>
-                                <span style={{marginTop: 0, marginLeft: 10, marginBottom: 0, padding: 0, gridRowStart: 1}}>cole</span>
+                                <span style={{marginTop: 0, marginLeft: 10, marginBottom: 0, padding: 0, gridRowStart: 1}}>
+                                    <Spring from={{x: 0}}
+                                            to={{x: 4}}
+                                            config={{duration: 400}}>
+                                                {props => this.state.firstName.substring(0, props.x)}
+                                            </Spring>
+                                </span>
                             </div>
                             <div style={{marginTop: -60}}>    
-                                <span style={{marginTop: 0, marginLeft: 10, marginBottom: 0, gridRowStart: 2, padding: 0}}>songer</span>
+                                <span style={{marginTop: 0, marginLeft: 10, marginBottom: 0, gridRowStart: 2, padding: 0}}>
+                                <Spring from={{x: 0}}
+                                            to={{x: 6}}
+                                            config={{duration: 600, delay: 400}}>
+                                                {props => this.state.lastName.substring(0, props.x)}
+                                            </Spring>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -47,9 +64,9 @@ class Header extends Component {
                         <div>
                             <ul id='nav' style={{listStyleType: 'none', fontSize: '2.25em', marginRight: 10,  bottom: 0}}>
                                 <li><a style={{color: '#93D5FF'}} >home</a></li>
-                                <li><a href='#' id='1' onClick={this.props.handleClick} >about</a></li>
-                                <li><a href='#' id='2' onClick={this.props.handleClick} >portfolio</a></li>
-                                <li><a href='#' id='3' onClick={this.props.handleClick} >contact</a></li>
+                                <li><a href='' id='1' onClick={this.props.handleClick} >about</a></li>
+                                <li><a href='' id='2' onClick={this.props.handleClick} >portfolio</a></li>
+                                <li><a href='' id='3' onClick={this.props.handleClick} >contact</a></li>
                             </ul>
                         </div>
                     </div>

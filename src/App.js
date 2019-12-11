@@ -12,10 +12,12 @@ function App() {
     const [show, setShow] = useState(false);//false);
     const [clickedValue, setClickedValue] = useState(null);
     const handleClick = (e) => {
+      e.preventDefault();
       setClickedValue(Number(e.currentTarget.id));
       e.currentTarget.id === '0' ? setShow(false) : setShow(show => !show);
     };
     const changePage = (e) => {
+      e.preventDefault();
       setClickedValue(Number(e.currentTarget.id));
       e.currentTarget.id === '0' && setShow(false)
     };
@@ -39,11 +41,10 @@ function App() {
             <animated.div
               key={items[index]}
               className="test"
-              style={{...rest, borderTop: '.1em solid #93D5FF', transform: x.interpolate(x => `translate3d(0,${x}px, 0)`), gridColumn: index+1, cursor: 'pointer', padding: 10}}
-              id={index}
-              onClick={changePage}
+              style={{...rest, borderTop: '.1em solid #93D5FF', transform: x.interpolate(x => `translate3d(0,${x}px, 0)`), gridColumn: index+1, padding: 10}}
+              
             >
-              <a href='#' style={{textDecoration: 'none', color: index===clickedValue ? (index < 3 ? '#93D5FF' : '#6491AD') : '#e0e1dd'}} >{items[index]}</a>
+              <a id={index} onClick={changePage} href="" style={{textDecoration: 'none', color: index===clickedValue ? (index < 3 ? '#93D5FF' : '#6491AD') : '#e0e1dd'}} >{items[index]}</a>
             </animated.div>
           ))}
         </div>

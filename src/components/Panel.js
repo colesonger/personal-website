@@ -33,9 +33,9 @@ export default class Panel extends Component {
                 <Transition
                     
                     items={this.state.index}
-                    from={{ opacity: 0, transform: 'translate3d(0vh,0vh,-60px)' }}
-                    enter={{ opacity: 1, transform: 'translate3d(0vh,0vh,-60px)' }}
-                    leave={{ opacity: 0, transform: 'translate3d(0vh,0vh,-200px)' }}
+                    from={{ opacity: 0, transform: this.state.index == 2 ? 'translate3d(0vh,0vh,-60px)' : 'translate3d(0vh,0vh,-60px)'}}
+                    enter={{ opacity: 1, transform: this.state.index == 2 ? 'translate3d(0vh,0vh,-60px)' : 'translate3d(0vh,0vh,-60px)' }}
+                    leave={{ opacity: 0, transform: this.state.index == 2 ? 'translate3d(0vh,0vh,-60px)' : 'translate3d(0vh,0vh,-60px)' }}
                     config={{duration: 500, friction: 800}}>
                     {index => elements[index]}
                     </Transition>
@@ -44,36 +44,3 @@ export default class Panel extends Component {
     }
 
 }
-
-// const Panel = ({handleClick, currentPage}) => {
-//     //console.log(currentPage)
-//     const [index, set] = useState(0);
-//     useEffect(() => {
-//         set(Number(currentPage));
-//     }, [index, currentPage]);
-//     const transition = useTransition(index, p => p, {
-//         from: {opacity: 0, transform: 'translate3d(0, 0, -10px)', height: 0},
-//         enter: {opacity: 1, transform: 'translate3d(0, 0, 0)'},
-//         leave: {opacity: 0, transform: 'translate3d(0, 0, -200px)'},
-//         config: {
-//             duration: 500,
-//             friction: 800
-//         }
-//     })
-//     const elements = [
-//         ({style}) => <animated.div style={{...style }}><Header handleClick={handleClick}/></animated.div>,
-//         ({style}) => <animated.div style={{...style }}><About /></animated.div>,
-//         ({style}) => <animated.div style={{...style, height: '0vh', color: 'white' }}><Portfolio/></animated.div>,
-//         ({style}) => <animated.div style={{...style , height: '0vh', color: 'white' }}><Contact /></animated.div>
-//     ]
-//     return (
-//         <div className='main' style={{marginLeft: '5vw', width: '90vw'}}>
-//             {transition.map(({item, props, key}) => {
-//                 const Page = elements[item];
-//                 return <Page key={key} style={props}/>
-//             })}
-//         </div>
-//     )
-// }
-
-// export default Panel;
