@@ -33,9 +33,9 @@ export default class Panel extends Component {
                 <Transition
                     
                     items={this.state.index}
-                    from={{ opacity: 0, transform: this.state.index == 2 ? 'translate3d(0vh,0vh,-60px)' : 'translate3d(0vh,0vh,-60px)'}}
-                    enter={{ opacity: 1, transform: this.state.index == 2 ? 'translate3d(0vh,0vh,-60px)' : 'translate3d(0vh,0vh,-60px)' }}
-                    leave={{ opacity: 0, transform: this.state.index == 2 ? 'translate3d(0vh,0vh,-60px)' : 'translate3d(0vh,0vh,-60px)' }}
+                    from={{ opacity: 0, transform: this.state.index === 2 ? 'translate3d(0vh,0vh,-60px)' : 'translate3d(0vh,0vh,-60px)'}}
+                    enter={{ opacity: 1, transform: this.state.index === 2 ? 'translate3d(0vh,0vh,-60px)' : 'translate3d(0vh,0vh,-60px)' }}
+                    leave={{ opacity: 0, transform: this.state.index === 2 ? 'translate3d(0vh,0vh,-60px)' : 'translate3d(0vh,0vh,-60px)' }}
                     config={{duration: 500, friction: 800}}>
                     {index => elements[index]}
                     </Transition>

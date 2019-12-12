@@ -87,7 +87,7 @@ export default class Portfolio extends Component {
         // Number of columns
         columns={2}
         // Space between elements
-        margin={10}
+        margin={30}
         // Removes the possibility to scroll away from a maximized element
         lockScroll={false}
         // Delay when active elements (blown up) are minimized again

@@ -124,6 +124,16 @@ header {
   /*height: 100%;*/
   margin-bottom: 10px;
 
-  box-shadow: 0px 10px 60px -10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 60px -10px rgba(13, 27, 42, 0.2);
   transition: box-shadow 0.5s;
+}
+
+.cell:hover{
+  box-shadow: 0px 10px 60px -10px rgba(147,213,255,.6);
+}
+
+.title > span {
+  background: -webkit-linear-gradient(1turn, #84b59f, #9ad2cb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

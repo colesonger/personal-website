@@ -12,9 +12,7 @@ class Header extends Component {
         ],
         show: false,
         firstName: 'cole',
-        lastName: 'songer',
-        displayFirst: '',
-        displaySecond: ''
+        lastName: 'songer'
     };
 
     switch = () => {

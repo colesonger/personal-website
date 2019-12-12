@@ -54,7 +54,7 @@ export class Fade extends React.PureComponent {
         style: {
           willChange: 'opacity, transform',
           ...props.style,
-          ...styles,
+          ...styles
         },
       }
       return <Component {...newProps} />
