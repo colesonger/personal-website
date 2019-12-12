@@ -137,3 +137,15 @@ header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.resume-section {
+  grid-column: 2 / 4;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+}
+.resume-section-top {
+  grid-column: 2 / 4;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  border-top: 1px solid #e0e1dd;
+}

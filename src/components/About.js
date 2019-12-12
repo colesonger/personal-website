@@ -5,7 +5,7 @@ import {Resume} from './Resume';
 
 
 const pages = [
-    ({style, props}) => <animated.div style={{...style, gridRow: '2 / auto', gridColumn: '1/5'}}><AboutMe isLoaded={props}/></animated.div>,
+    ({style, props}) => <animated.div style={{...style, gridRow: '1 / auto', gridColumn: '1/5'}}><AboutMe isLoaded={props}/></animated.div>,
     ({style}) => <animated.div style={{...style, gridRow: '1 / auto', gridColumn: '1 / 5'}}><Resume/></animated.div>,
     ({style}) => <animated.div style={{...style,  gridRow: '1 / auto', gridColumn: '2 / 5'}}><h1 style={{color: '#e0e1dd'}}>About Peanut Songer</h1></animated.div>,
     ({style}) => <animated.div style={{...style,  gridRow: '2 / auto', gridColumn: '2 / 5'}}><h1 style={{color: '#e0e1dd'}}>About Friend Songer</h1></animated.div>
@@ -32,7 +32,20 @@ export const About = () => {
                 return <Page key={key} style={props} props={isLoaded}/>
             })}
             <div style={{gridColumn: 5, gridRow: '2 / 4', cursor: 'pointer'}} onClick={onClick}>
-            <span>{index % 4 === 0 ? "Resume" : "Next"}</span>
+            <ul style={{listStyleType: 'none', color: '#e0e1dd', textAlign: 'left'}}>
+                <li>
+                    {index === 0 ? <span style={{borderLeft: '2px solid #84b59f', paddingLeft: 5}}>See Resumé</span> : <span>&nbsp;</span>}
+                </li>
+                <li>
+                    {index === 1 ? <span style={{borderLeft: '2px solid #84b59f', paddingLeft: 5}}>See About</span> : <span>&nbsp;</span>}
+                </li>
+                <li>
+                    {index === 2 ? <span style={{borderLeft: '2px solid #84b59f', paddingLeft: 5}}>See Test</span> : <span>&nbsp;</span>}
+                </li>
+                <li>
+                    {index === 3 ? <span style={{borderLeft: '2px solid #84b59f', paddingLeft: 5}}>Go Back</span> : <span>&nbsp;</span>}
+                </li>
+            </ul>
             </div>
             </div>
     )
